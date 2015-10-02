@@ -225,6 +225,6 @@ void app_start(int argc, char *argv[]) {
 
     printf("TCP client IP Address is %s\r\n", eth.getIPAddress());
 
-    mbed::FunctionPointer1<void, const char*> fp(hello, &HelloHTTP::startTest);
+    mbed::util::FunctionPointer1<void, const char*> fp(hello, &HelloHTTP::startTest);
     minar::Scheduler::postCallback(fp.bind(HTTP_PATH));
 }

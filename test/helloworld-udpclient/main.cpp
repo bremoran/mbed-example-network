@@ -171,6 +171,6 @@ void app_start(int argc, char *argv[]) {
 
     /* Get the current time */
     gt = new UDPGetTime();
-    FunctionPointer1<void, const char*> fp(gt, &UDPGetTime::startGetTime);
+    mbed::util::FunctionPointer1<void, const char*> fp(gt, &UDPGetTime::startGetTime);
     minar::Scheduler::postCallback(fp.bind(HTTP_SERVER_NAME));
 }
